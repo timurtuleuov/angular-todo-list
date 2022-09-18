@@ -1,0 +1,19 @@
+button{
+    margin: 5px;
+}
+body{
+    width: 100%;
+    height: 100%;
+}
+.todo{
+    padding-left: 9%;
+    padding-top: 8%;
+    width: 45%;
+    position: relative;
+}
+.calendar{
+    position: absolute;
+    padding-bottom: -200%;
+    height: 40%;
+    padding-left: 60%
+}

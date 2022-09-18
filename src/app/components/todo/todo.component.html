@@ -1,0 +1,32 @@
+<body>
+    <div class='calendar'>    <app-calendar></app-calendar></div>
+    <div class='todo'>
+        <h2>Список заданий</h2>
+        <mat-selection-list #todo>
+            <mat-list-option *ngFor="let todo of todoList">
+                <li>{{todo}} <button class='btn btn-outline-danger btn-sm' (click)='todoDel(todo)' *ngIf=isDel>x</button></li>
+                </mat-list-option>
+            </mat-selection-list>
+                
+        <p>
+            Выполнено {{todo.selectedOptions.selected.length}} из {{this.todoList.length}}<br/>
+            <mat-progress-bar mode="determinate" color='accent' value='{{( todo.selectedOptions.selected.length/this.todoList.length)*100}}'></mat-progress-bar>
+        </p>
+        <div class='todoAdd' *ngIf=isAdd>
+            <form (submit)="todoAdd(option.value)">
+                <div class='form-group'>
+                    <label for='option'> </label>
+                    <input type='text' id='option' placeholder="Что надо сделать?" 
+                    class='form-control' #option ng-model="FirstName" >
+                    <br/>
+                    <button type='submit' class='btn btn-outline-success'>Добавить</button>
+                </div>
+            </form>
+        </div>
+        <button class='btn btn-success' (click)="openAdd()" *ngIf=!isAdd>Добавить</button>
+        <button  class='btn btn-warning' (click)="openAdd()" *ngIf=isAdd>Отменить</button>
+        <button class='btn btn-danger' (click)="openDel()" *ngIf=!isDel>Удалить</button>
+        <button  class='btn btn-warning' (click)="openDel()" *ngIf=isDel>Отменить</button>
+        
+    </div>
+</body>
