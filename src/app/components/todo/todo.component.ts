@@ -6,17 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
- 
-  name = '';
-  time = '';
   todoList: string[] = [''];
   isAdd = false;
   isDel = false;
   constructor() { }
-  // todoAdd(value){
-  //   this.todoList.unshift(value);
-  //   return false;
-  // }
+   }
   openAdd(){
     this.isAdd = !this.isAdd;
   }
