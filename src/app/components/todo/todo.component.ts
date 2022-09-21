@@ -19,7 +19,7 @@ export class TodoComponent implements OnInit {
   }
   
   ngOnInit(){
-    this.todoList = ['помыть кошачьи миски'];
+    this.todoList = [''];
   }
   todoAdd(opt: string){
     this.todoList.unshift(opt);
